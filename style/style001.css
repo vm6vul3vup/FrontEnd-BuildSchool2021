@@ -1,0 +1,79 @@
+h1{
+    color: red;
+    font-size: 30px;
+}
+p{
+    color: blue;
+    font-size: 20px;
+}
+.sp
+{
+    color: chartreuse;
+    font-size: 25px;
+}
+.box
+{
+    color: chocolate;
+    font-size: 50px;
+}
+/* 同時擁有這兩個分類sp跟box */
+.sp.box  
+{
+    color: crimson;
+    font-size: 10px;
+}
+p.box
+{
+    color: darkmagenta;
+    font-size: 30px;
+}
+span
+{
+    color: darkorange;
+}
+
+#tom
+{
+    color: deeppink;
+    font-size: 20px;
+}
+#tom.box
+{
+    color: dimgrey;
+    font-size: 30px;
+}
+
+.box p
+{
+    color: green;
+    font-size: 25px;
+}
+
+.L1
+{
+    border: 5px solid red;
+    background-color: hotpink;
+    padding: 40px;
+}
+.L2
+{
+    border: 5px solid red;
+    padding: 40px;
+}
+.L3
+{
+    border: 5px solid red;
+    padding: 40px;
+}
+
+.L1 div
+{
+    border: 5px solid red;
+    background-color: blue;
+    padding: 40px;
+}
+
+.L1 > div
+{
+    background-color: green;
+}
