@@ -22,6 +22,8 @@
 {
     width: 1200px;
     background-color: crimson;
+    /* 讓物件橫排 */
     display: flex;
+    /* 讓物件換行 */
     flex-wrap: wrap;
 }
