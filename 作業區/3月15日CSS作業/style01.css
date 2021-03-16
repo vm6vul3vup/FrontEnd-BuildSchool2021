@@ -1,0 +1,40 @@
+/* 各瀏覽器預設格式不同所以reset 正式專案不會用 練習時用而已 */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.boxpic
+{
+    width: 570px;
+
+    /* font-size: 30px; */
+    background-color: blue;
+    /* 邊界 */
+    /* border: 2px solid blue; */
+    /* 內距 */
+    /* padding: 10px; */
+    /* 物間之間的距離 */
+    margin: 15px;
+}
+
+.wrap
+{
+    width: 1200px;
+    background-color: crimson;
+    /* 讓物件橫排 */
+    display: flex;
+    /* 讓物件換行 */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end; 
+}
+
+img
+{
+    width: 570px;
+    background-color: blue;
+    /* height: 800px; */
+    margin: 15px;
+}
