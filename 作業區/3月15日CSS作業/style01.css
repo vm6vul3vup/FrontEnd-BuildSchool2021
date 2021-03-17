@@ -29,8 +29,82 @@
     /* 讓物件換行 */
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-end; 
+    justify-content: left; 
 }
+
+.wrap1
+{
+    width: 1200px;
+    background-color: crimson;
+    /* 讓物件橫排 */
+    display: flex;
+    /* 讓物件換行 */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left; 
+}
+
+.wrap2
+{
+    width: 1200px;
+    background-color: crimson;
+    /* 讓物件橫排 */
+    display: flex;
+    /* 讓物件換行 */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left; 
+}
+
+.wrap3
+{
+    width: 1200px;
+    background-color: crimson;
+    /* 讓物件橫排 */
+    display: flex;
+    /* 讓物件換行 */
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left; 
+}
+
+.wrap1 img
+{
+    width: 1170px;
+    background-color: blue;
+    margin: 15px;
+}
+
+.wrap2 img
+{
+    width: 570px;
+    background-color: blue;
+    margin: 15px;
+}
+
+.wrap3 img
+{
+    width: 370px;
+    background-color: blue;
+    margin: 15px;
+}
+
+.wrap1 div
+{
+    width: 1170px;
+    margin: 15px;
+}
+.wrap2 div
+{
+    width: 570px;
+    margin: 15px;
+}
+.wrap3 div
+{
+    width: 370px;
+    margin: 15px;
+}
+
 
 img
 {
@@ -38,4 +112,29 @@ img
     background-color: blue;
     /* height: 800px; */
     margin: 15px;
+}
+
+.text1
+{
+    font-size: 15px;
+    color:chartreuse;
+}
+
+.price-original-lefe-line-through
+{
+    font-size: 15px;
+    color:chartreuse;
+    text-decoration:line-through;
+}
+
+.price-original-lefe
+{
+    font-size: 15px;
+    color:chartreuse;
+}
+
+.price-sale
+{
+    font-size: 15px;
+    color:chartreuse;
 }
