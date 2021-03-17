@@ -23,7 +23,7 @@
 .wrap
 {
     width: 1200px;
-    background-color: crimson;
+    /* background-color: crimson; */
     /* 讓物件橫排 */
     display: flex;
     /* 讓物件換行 */
@@ -35,7 +35,7 @@
 .wrap1
 {
     width: 1200px;
-    background-color: crimson;
+    /* background-color: crimson; */
     /* 讓物件橫排 */
     display: flex;
     /* 讓物件換行 */
@@ -47,7 +47,7 @@
 .wrap2
 {
     width: 1200px;
-    background-color: crimson;
+    /* background-color: crimson; */
     /* 讓物件橫排 */
     display: flex;
     /* 讓物件換行 */
@@ -59,7 +59,7 @@
 .wrap3
 {
     width: 1200px;
-    background-color: crimson;
+    /* background-color: crimson; */
     /* 讓物件橫排 */
     display: flex;
     /* 讓物件換行 */
@@ -117,24 +117,24 @@ img
 .text1
 {
     font-size: 15px;
-    color:chartreuse;
+    color:black;
 }
 
 .price-original-lefe-line-through
 {
     font-size: 15px;
-    color:chartreuse;
+    color:black;
     text-decoration:line-through;
 }
 
 .price-original-lefe
 {
     font-size: 15px;
-    color:chartreuse;
+    color:black;
 }
 
 .price-sale
 {
     font-size: 15px;
-    color:chartreuse;
+    color:black;
 }
