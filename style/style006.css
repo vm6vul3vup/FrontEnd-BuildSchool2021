@@ -1,0 +1,50 @@
+/* h1 是 block */
+h1
+{
+    background-color: darkorange;
+}
+
+/* h1 是 inline */
+a
+{
+    background-color: cyan;
+    /* display: inline-block; */
+    /* height: 20px; */
+    /*
+    padding:上右下左
+    padding:上下 左右
+    padding:上 右左 下
+    padding:上 右 下 左
+     */
+    padding: 6px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+nav
+{
+    background-color: darkred;
+    font-size: 0px;
+}
+
+/* h1 是 inline */
+span
+{
+    background-color: crimson;
+}
+
+/* p 是 block */
+p
+{
+    /* display: inline; */
+    display: list-item;
+    margin: 20px;
+    background-color: blue;
+}
+
+/* p 是 block */
+ul
+{
+    background-color: darkorchid;
+}
+
+
