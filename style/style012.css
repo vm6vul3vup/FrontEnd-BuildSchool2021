@@ -45,3 +45,14 @@ img
     /* height: 200px; */
     /* margin: 10px; */
 }
+
+.div-logo
+{
+    width: 100%;
+    background-color: chartreuse;
+}
+
+.div-logo img
+{
+    background-color: crimson;
+}
