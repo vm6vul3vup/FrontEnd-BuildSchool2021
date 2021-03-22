@@ -8,17 +8,42 @@
 .content-head
 {
     width: 100%;
-    height: 200px;
+    height: 130px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
-    background-color:black;
+    background:rgba(65, 64, 64, 0.3);
+    /* background-color:black; */
     
 }
 
+.content-title
+{
+    width: 700px;
+    color: white;
+    text-align: left;
+    /* font-size: 300px; */
+    /* background-color: yellow; */
+    
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* text-align:; */
+    /* align-content:space-between; */
+    margin: 50px;
+}
+.content-title h1
+{
+    font-size: 100px;
+}
+.content-title h2
+{
+    font-size: 20px;
+    font-family: Microsoft JhengHei;
+}
 
 .content-div-logo
 {
@@ -47,14 +72,14 @@
     display: inline-block;
     margin: 10px;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     font-family: Microsoft JhengHei;
 }
 
 .site-content
 {
     /* background-color: darkblue; */
-    background-image: url(../3月18切版商業計畫/picture/asset\ 48.jpeg);
+    background-image: url(../3月18切版商業計畫/picture/head.gif);
     background-repeat:no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -66,3 +91,178 @@
     text-align: center;
     align-items:center;
 }
+
+.content-three-title
+{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.content-three-title p
+{
+    width: 300px;
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 80px;
+}
+
+.content-three-title-one h3
+{
+    display: list-item;
+    list-style-image: url(../3月18切版商業計畫/picture/android_logo_opt.png);
+    color: white;
+    margin: 20px;
+    
+}
+
+.content-three-title-two h3
+{
+    display: list-item;
+    list-style-image: url(../3月18切版商業計畫/picture/apple_logo_opt.png);
+    color: white;
+    margin: 20px;
+}
+
+.content-three-title-three h3
+{
+    display: list-item;
+    list-style-image: url(../3月18切版商業計畫/picture/pokemon_logo_opt.png);
+    color: white;
+    margin: 20px;
+}
+
+.second-content
+{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
+    /* text-align: center; */
+    align-items:center;
+}
+
+.second-content h2
+{
+    width: 350px;
+    font-size: 50px;
+    color: rgb(56, 53, 53);
+    /* background-color: rgb(255, 0, 0); */
+    padding-right: 100px;
+}
+
+.second-content p
+{
+    width: 600px;
+    font-size: 30px;
+    /* background-color: teal; */
+}
+
+.second-content div:nth-child(2)
+{
+    /* background-color: tomato; */
+}
+
+.second-content span
+{
+    /* display: inline; */
+    font-size: 50px;
+}
+
+.second {
+    width: 100%;
+    margin: 80px 0;
+    display: flex;
+    /* background-color: #ffa; */
+}
+
+.second .wrap {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+/*寬度佔320 */
+.second .title {
+    width: 220px;
+    padding: 0px 70px 0px 30px;
+    font-size: 20px;
+    font-family: Prata, sans-serif;
+    line-height: 1.7;
+    color: #42474c;
+    /* border: 1px solid #000; */
+
+}
+
+/*寬度佔800 */
+.second .text {
+    width: 768px;
+    margin: auto;
+    padding-left: 50px;
+    font-size: 18px;
+    font-family: Montserrat, sans-serif;
+    color: #42474c;
+    line-height: 1.5;
+    column-count: 2;
+    column-gap: 60px;
+    border-left: 2px solid rgb(141, 141, 141);
+}
+
+.second .text::first-letter {
+    font-family: Prata, sans-serif;
+    font-size: 40px;
+    color: rgb(170, 144, 121);
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.third
+{
+    width: 100%;
+    height: 150px;
+    /* margin: 20px 0; */
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: #C2B697;
+}
+
+.third h2
+{
+    color: white;
+    font-size: 35px;
+    font-family: Microsoft JhengHei;
+    /* background-color: darkblue; */
+}
+
+.third p
+{
+    color: white;
+    font-family: Microsoft JhengHei;
+}
+
+.third a
+{
+    color: black;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.third a:hover{
+    background-color: transparent;
+    color: white;
+}
+
+/* .third a {
+    color: #42474c;
+    text-decoration: none;
+} */
