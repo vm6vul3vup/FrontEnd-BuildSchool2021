@@ -1,0 +1,48 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item
+{
+    background-color: gold;
+    width: 1200px;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.item .one
+{
+        /* 控制主軸寬 */
+    flex-basis: 600px;
+    /* 控制物件前後順序 */
+    order: 2;
+    /* 控制剩餘空間分配 */
+    /* flex-grow: 2; */
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    background-color: burlywood;
+}
+
+.item .two
+{
+    /* 控制剩餘空間分配 */
+    flex-grow: 1;
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(250, 16, 16);
+}
+
+.item .three
+{
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(47, 214, 25);
+}

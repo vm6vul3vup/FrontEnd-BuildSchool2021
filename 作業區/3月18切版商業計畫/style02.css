@@ -68,7 +68,6 @@
 }
 .content-div-ul li
 {
-    
     display: inline-block;
     margin: 10px;
     color: white;
@@ -239,7 +238,6 @@
     color: white;
     font-size: 35px;
     font-family: Microsoft JhengHei;
-    /* background-color: darkblue; */
 }
 
 .third p
@@ -263,7 +261,128 @@
     color: white;
 }
 
-/* .third a {
-    color: #42474c;
-    text-decoration: none;
-} */
+.fourth
+{
+    width: 100%;
+    /* height: 800px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.fourth .title
+{
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fourth .title h2
+{
+    font-size: 40px;
+}
+
+.fourth .title p
+{
+    width: 70%;
+    padding-top: 20px;
+    font-size: 18px;
+    font-family: Montserrat, sans-serif;
+    color: black;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.fourth .title span
+{
+    color: #C2B697;
+}
+
+.fourth .phone-wrap
+{
+    width: 100%;
+    height: 600px;
+    /* color: chartreuse; */
+    /* background-color: darkcyan; */
+    display: flex;
+}
+
+.fourth .phone-wrap .port-one
+{
+    width: 38%;
+    height: 600px;
+    /* background-color: darkblue; */
+}
+
+.fourth .phone-wrap .port-one .text-picture
+{
+    width: 100%;
+    height: 200px;
+    /* background-color: deeppink; */
+    color: #42474C;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+}
+
+.fourth .phone-wrap .port-one .text-picture p
+{
+    width: 300px;
+    font-family: Montserrat, sans-serif;
+    color: #42474C;
+}
+
+.fourth .phone-wrap .port-one .text-picture h3
+{
+    color: #C2B697;
+}
+
+.fourth .phone-wrap .port-two
+{
+    width: 24%;
+    height: 600px;
+    background-image: url(../3月18切版商業計畫/picture/asset\ 1.png);
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    /* background-color: darkgoldenrod; */
+}
+
+.fourth .phone-wrap .port-three
+{
+    width: 38%;
+    height: 600px;
+    /* background-color: darkred; */
+}
+
+.fourth .phone-wrap .port-three .text-picture
+{
+    width: 100%;
+    height: 200px;
+    /* background-color: deeppink; */
+    color: #42474C;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+}
+
+.fourth .phone-wrap .port-three .text-picture p
+{
+    width: 300px;
+    font-family: Montserrat, sans-serif;
+    color: #42474C;
+}
+
+.fourth .phone-wrap .port-three .text-picture h3
+{
+    color: #C2B697;
+}
+
+.fourth .phone-wrap .port-three .text-picture .picture
+{
+    order: -1;
+}

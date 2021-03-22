@@ -1,0 +1,39 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item
+{
+    background-color: gold;
+    width: 500px;
+    height: 400px;
+    overflow: scroll;
+    margin: auto;
+}
+
+.one
+{
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    background-color: chartreuse;
+}
+
+.picture-box
+{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 75%;
+    background-color: cyan;
+}
+
+.picture-box img
+{
+    width: 100%;
+    height: 100%;
+}
+
