@@ -1,0 +1,53 @@
+/* *
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+} */
+
+/* p*30>lorem100 */
+
+.box
+{
+    width: 200px;
+    height: 300px;
+    background-color: deeppink;
+    position: relative;
+}
+
+/* .box:hover
+{
+    background-color: red;
+}
+
+.box:active
+{
+    background-color: saddlebrown;
+} */
+
+.box .txt
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0,0, .5);
+    color: white;
+    /* 0完全透明看不到 1不透明看得到 */
+    opacity: 0;
+
+    /* transition: CSS屬性  動畫時間  延遲執行時間  速度設定 */
+    /* transition: top 1s 0s, opacity 1s 1s; */
+
+    /* transform: 縮放效果 */
+    transform: scale(0);
+    transition: 1s;
+    /* transition: .3s; */
+}
+
+.box:hover .txt
+{
+    transform: scale(1);
+    opacity: 1;
+}

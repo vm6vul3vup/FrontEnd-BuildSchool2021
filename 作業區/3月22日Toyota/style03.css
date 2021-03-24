@@ -1,0 +1,670 @@
+.outer-layer
+{
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 五大優勢標題 */
+h1:nth-child(1)
+{
+    font-size: 50px;
+    color: #333333;
+}
+
+/* 五個標題h2區塊 */
+.five-title-wrap
+{
+    width: 1000px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.five-title-wrap div
+{
+    width: 200px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    border: 1px;
+    border-color: black black #AE0014;
+    border-style:dotted;
+    border-bottom-style: solid;
+    margin: 0px 10px 0px 0px;
+    background: linear-gradient(to top,white , #AE0014);
+    transition: background 0.3s;
+    background-size:1px 1000px;
+    background-position:0px 30px;
+}
+
+.five-title-wrap div:nth-child(5)
+{
+    margin: 0px 0px 0px 0px;
+}
+
+.five-title-wrap div:hover
+{
+    background-position:0px -10px;
+}
+
+.five-title-wrap div:hover a
+{
+    font-size: 16px;
+    color: white;
+}
+
+.five-title-wrap a
+{
+    margin: 0;
+    padding: 0;
+    /* list-style: none; */
+    color: black;
+    /* font-size: 20px; */
+    /* background-color: white; */
+    text-decoration: none;
+    /* font-family: Microsoft JhengHei; */
+}
+
+.five-title-wrap h2
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 操控樂趣區塊 */
+.control-fun-div-wrap
+{
+    position: relative;
+    width: 1000px;
+    height: 610px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: yellow; */
+    opacity: 1;
+}
+
+.control-fun-div-wrap:hover
+{
+    /* opacity: 1; */
+}
+
+.control-fun-div-wrap:hover div:nth-child(1)
+{
+    animation-name:move-first;
+    animation-duration:2s;
+}
+
+@keyframes move-first{
+    from{
+        left:-100px;
+    }
+    to{
+        left:0px;
+    }
+}
+
+.control-fun-div-wrap:hover div:nth-child(2)
+{
+    animation-name:move-second;
+    animation-duration:2s;
+}
+
+@keyframes move-second{
+    from{
+        right: -100px;
+    }
+    to{
+        right: 0;
+    }
+}
+
+.control-fun-div-wrap:hover div:nth-child(3)
+{
+    animation-name:move-third;
+    animation-duration:2s;
+}
+
+@keyframes move-third{
+    from{
+        right: 50px;
+    }
+    to{
+        right: 150px;
+    }
+}
+
+.control-fun-div-wrap:hover div:nth-child(4)
+{
+    animation-name:move-fourth;
+    animation-duration:2s;
+}
+
+@keyframes move-fourth{
+    from{
+        top: 428px;
+    }
+    to{
+        top: 328px;
+    }
+}
+
+.control-fun-div-wrap div:nth-child(1)
+{
+    z-index:100;
+    position: absolute;
+    left: 0;
+}
+
+.control-fun-div-wrap div:nth-child(2)
+{
+    z-index:20;
+    width: 450px;
+    height: 300px;
+    background-color: #F5F5F5;
+    position: absolute;
+    right: 0;
+}
+
+.control-fun-div-wrap div:nth-child(3)
+{
+    z-index:50;
+    position: absolute;
+    right: 150px;
+    top: 50px;
+}
+
+.control-fun-div-wrap div:nth-child(4)
+{
+    z-index:120;
+    position: absolute;
+    right: 300px;
+    top: 328px;
+}
+
+.control-fun-div-wrap div:nth-child(5)
+{
+    opacity: 0;
+    color: white;
+}
+
+/* 安全守護區塊 */
+.security-guard-div-wrap
+{
+    position: relative;
+    width: 1000px;
+    height: 610px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: yellow; */
+    opacity: 1;
+}
+
+.security-guard-div-wrap:hover
+{
+    /* opacity: 1; */
+}
+
+.security-guard-div-wrap:hover div:nth-child(1)
+{
+    animation-name:move-first;
+    animation-duration:2s;
+}
+
+@keyframes move-first{
+    from{
+        left:-100px;
+    }
+    to{
+        left:0px;
+    }
+}
+
+.security-guard-div-wrap:hover div:nth-child(2)
+{
+    animation-name:move-second;
+    animation-duration:2s;
+}
+
+@keyframes move-second{
+    from{
+        right: -100px;
+    }
+    to{
+        right: 0;
+    }
+}
+
+.security-guard-div-wrap:hover div:nth-child(3)
+{
+    animation-name:move-third;
+    animation-duration:2s;
+}
+
+@keyframes move-third{
+    from{
+        right: 50px;
+    }
+    to{
+        right: 150px;
+    }
+}
+
+.security-guard-div-wrap:hover div:nth-child(4)
+{
+    animation-name:move-fourth;
+    animation-duration:2s;
+}
+
+@keyframes move-fourth{
+    from{
+        top: 428px;
+    }
+    to{
+        top: 328px;
+    }
+}
+
+.security-guard-div-wrap div:nth-child(1)
+{
+    z-index:100;
+    position: absolute;
+    left: 0;
+}
+
+.security-guard-div-wrap div:nth-child(2)
+{
+    z-index:20;
+    width: 450px;
+    height: 300px;
+    background-color: #F5F5F5;
+    position: absolute;
+    right: 0;
+}
+
+.security-guard-div-wrap div:nth-child(3)
+{
+    z-index:50;
+    position: absolute;
+    right: 150px;
+    top: 50px;
+}
+
+.security-guard-div-wrap div:nth-child(4)
+{
+    z-index:120;
+    position: absolute;
+    right: 300px;
+    top: 328px;
+}
+
+.security-guard-div-wrap div:nth-child(5)
+{
+    opacity: 0;
+    color: white;
+}
+
+/* 乘坐舒適區塊 */
+.ride-comfort-div-wrap
+{
+    position: relative;
+    width: 1000px;
+    height: 610px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: yellow; */
+    opacity: 1;
+}
+
+.ride-comfort-div-wrap:hover
+{
+    /* opacity: 1; */
+}
+
+.ride-comfort-div-wrap:hover div:nth-child(1)
+{
+    animation-name:move-first;
+    animation-duration:2s;
+}
+
+@keyframes move-first{
+    from{
+        left:-100px;
+    }
+    to{
+        left:0px;
+    }
+}
+
+.ride-comfort-div-wrap:hover div:nth-child(2)
+{
+    animation-name:move-second;
+    animation-duration:2s;
+}
+
+@keyframes move-second{
+    from{
+        right: -100px;
+    }
+    to{
+        right: 0;
+    }
+}
+
+.ride-comfort-div-wrap:hover div:nth-child(3)
+{
+    animation-name:move-third;
+    animation-duration:2s;
+}
+
+@keyframes move-third{
+    from{
+        right: 50px;
+    }
+    to{
+        right: 150px;
+    }
+}
+
+.ride-comfort-div-wrap:hover div:nth-child(4)
+{
+    animation-name:move-fourth;
+    animation-duration:2s;
+}
+
+@keyframes move-fourth{
+    from{
+        top: 428px;
+    }
+    to{
+        top: 328px;
+    }
+}
+
+.ride-comfort-div-wrap div:nth-child(1)
+{
+    z-index:100;
+    position: absolute;
+    left: 0;
+}
+
+.ride-comfort-div-wrap div:nth-child(2)
+{
+    z-index:20;
+    width: 450px;
+    height: 300px;
+    background-color: #F5F5F5;
+    position: absolute;
+    right: 0;
+}
+
+.ride-comfort-div-wrap div:nth-child(3)
+{
+    z-index:50;
+    position: absolute;
+    right: 150px;
+    top: 50px;
+}
+
+.ride-comfort-div-wrap div:nth-child(4)
+{
+    z-index:120;
+    position: absolute;
+    right: 0px;
+    top: 328px;
+}
+
+.ride-comfort-div-wrap div:nth-child(5)
+{
+    opacity: 0;
+    color: white;
+}
+/* 以人為本區塊 */
+.people-oriented-div-wrap
+{
+    position: relative;
+    width: 1000px;
+    height: 610px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: yellow; */
+    opacity: 1;
+}
+
+.people-oriented-div-wrap:hover
+{
+    /* opacity: 1; */
+}
+
+.people-oriented-div-wrap:hover div:nth-child(1)
+{
+    animation-name:move-first;
+    animation-duration:2s;
+}
+
+@keyframes move-first{
+    from{
+        left:-100px;
+    }
+    to{
+        left:0px;
+    }
+}
+
+.people-oriented-div-wrap:hover div:nth-child(2)
+{
+    animation-name:move-second;
+    animation-duration:2s;
+}
+
+@keyframes move-second{
+    from{
+        right: -100px;
+    }
+    to{
+        right: 0;
+    }
+}
+
+.people-oriented-div-wrap:hover div:nth-child(3)
+{
+    animation-name:move-third;
+    animation-duration:2s;
+}
+
+@keyframes move-third{
+    from{
+        right: 50px;
+    }
+    to{
+        right: 150px;
+    }
+}
+
+.people-oriented-div-wrap:hover div:nth-child(4)
+{
+    animation-name:move-fourth-people-oriented;
+    animation-duration:2s;
+}
+
+@keyframes move-fourth-people-oriented{
+    from{
+        top: 450px;
+    }
+    to{
+        top: 350px;
+    }
+}
+
+.people-oriented-div-wrap div:nth-child(1)
+{
+    z-index:100;
+    position: absolute;
+    left: 0;
+}
+
+.people-oriented-div-wrap div:nth-child(2)
+{
+    z-index:20;
+    width: 450px;
+    height: 300px;
+    background-color: #F5F5F5;
+    position: absolute;
+    right: 0;
+}
+
+.people-oriented-div-wrap div:nth-child(3)
+{
+    z-index:50;
+    position: absolute;
+    right: 150px;
+    top: 50px;
+}
+
+.people-oriented-div-wrap div:nth-child(4)
+{
+    z-index:120;
+    position: absolute;
+    right: 300px;
+    top: 350px;
+}
+
+.people-oriented-div-wrap div:nth-child(5)
+{
+    opacity: 0;
+    color: white;
+}
+
+/* 引以為傲區塊 */
+.proud-of-div-wrap
+{
+    position: relative;
+    width: 1000px;
+    height: 610px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: yellow; */
+    opacity: 1;
+}
+
+.proud-of-div-wrap:hover
+{
+    /* opacity: 1; */
+}
+
+.proud-of-div-wrap:hover div:nth-child(1)
+{
+    animation-name:move-first;
+    animation-duration:2s;
+}
+
+@keyframes move-first{
+    from{
+        left:-100px;
+    }
+    to{
+        left:0px;
+    }
+}
+
+.proud-of-div-wrap:hover div:nth-child(2)
+{
+    animation-name:move-second;
+    animation-duration:2s;
+}
+
+@keyframes move-second{
+    from{
+        right: -100px;
+    }
+    to{
+        right: 0;
+    }
+}
+
+.proud-of-div-wrap:hover div:nth-child(3)
+{
+    animation-name:move-third;
+    animation-duration:2s;
+}
+
+@keyframes move-third{
+    from{
+        right: 50px;
+    }
+    to{
+        right: 150px;
+    }
+}
+
+.proud-of-div-wrap:hover div:nth-child(4)
+{
+    animation-name:move-fourth;
+    animation-duration:2s;
+}
+
+@keyframes move-fourth{
+    from{
+        top: 428px;
+    }
+    to{
+        top: 328px;
+    }
+}
+
+.proud-of-div-wrap div:nth-child(1)
+{
+    z-index:100;
+    position: absolute;
+    left: 0;
+}
+
+.proud-of-div-wrap div:nth-child(2)
+{
+    z-index:20;
+    width: 450px;
+    height: 300px;
+    background-color: #F5F5F5;
+    position: absolute;
+    right: 0;
+}
+
+.proud-of-div-wrap div:nth-child(3)
+{
+    z-index:50;
+    position: absolute;
+    right: 150px;
+    top: 50px;
+}
+
+.proud-of-div-wrap div:nth-child(4)
+{
+    z-index:120;
+    position: absolute;
+    right: 300px;
+    top: 328px;
+}
+
+.proud-of-div-wrap div:nth-child(5)
+{
+    opacity: 0;
+    color: white;
+}
+
+

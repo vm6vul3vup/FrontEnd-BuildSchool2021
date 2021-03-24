@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CACJ;EACI,gBAAgB,EAAE,IAAI;CAMzB;;AARD,AAII,IAJA,CAIA,CAAC,CACD;EACI,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "20210323scss01.scss"
+    ],
+    "names": [],
+    "file": "20210323scss01.css"
+}
