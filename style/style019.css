@@ -1,0 +1,58 @@
+/* *
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+} */
+
+/* p*30>lorem100 */
+.wrap
+{
+    /* width: 960px; */
+    max-width: 960px;
+    margin: auto;
+    border: 12px solid red;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item
+{
+    width: 31.25%;
+    height: 200px;
+    background-color: salmon;
+    margin: 10px 1.0416666%;
+}
+
+/* @media screen and (min-width:768px)
+{
+    .item
+    {
+        background: sienna;
+    }
+}
+
+@media screen and (min-width:1024px)
+{
+    .item
+    {
+        background: springgreen;
+    }
+}
+
+@media screen and (min-width:1280px)
+{
+    .item
+    {
+        background: tomato;
+    }
+} */
+
+@media screen and (min-width:768px) and (max-width:1023px)
+{
+    .item
+    {
+        background: sienna;
+    }
+}
+

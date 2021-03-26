@@ -1,0 +1,31 @@
+/* *
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+} */
+
+/* p*30>lorem100 */
+p
+{
+    color: red;
+    font-size: 30px;
+    padding: 1em;
+    text-indent: 1em;
+}
+
+p::after
+{
+    content: "★";
+    color: royalblue;
+    transform: scale(1);
+    display: inline-block;
+    text-indent: 0em;
+    font-size: 10em;
+}
+
+p::before
+{
+    content: "❤";
+    color: saddlebrown;
+}

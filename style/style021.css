@@ -1,0 +1,64 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* p*30>lorem100 */
+.wrap
+{
+    
+
+}
+
+.item
+{
+
+    height: 200px;
+    background-color: salmon;
+    margin: 15px;
+}
+
+@media screen and (min-width:768px)
+{
+    .wrap
+    {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+    }
+    .item
+    {
+        width: calc(100% / 2 - 30px);
+        background: sienna;
+    }
+}
+
+@media screen and (min-width:1024px)
+{
+    .item
+    {
+        width: calc(100% / 3 - 30px);
+        background: springgreen;
+    }
+}
+
+@media screen and (min-width:1280px)
+{
+    .item
+    {
+        width: calc(100% / 6 - 30px);
+        background: tomato;
+    }
+}
+
+
+/* 設定欄大小 */
+/* .item
+{
+    width: cals(100%/3 -30px);
+} */
+
+

@@ -1,0 +1,81 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* p*30>lorem100 */
+.wrap
+{
+    
+
+}
+
+.item
+{
+
+    height: 200px;
+    background-color: salmon;
+    margin: 15px;
+}
+
+@media screen and (min-width:768px)
+{
+    .wrap
+    {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .item
+    {
+        width: 46.09375%;
+        margin-left: 1.953125%;
+        margin-right: 1.953125%;
+        background: sienna;
+    }
+}
+
+@media screen and (min-width:1024px)
+{
+
+    .wrap
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .item
+    {
+        width: 30.403645833%;
+        margin-left: 1.464843%;
+        margin-right: 1.464843%;
+        background: springgreen;
+    }
+}
+
+@media screen and (min-width:1280px)
+{
+    .wrap
+    {
+        max-width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .item
+    {
+        width: 14.1666666667%;
+        margin-left: 1.25%;
+        margin-right: 1.25%;
+        background: tomato;
+    }
+}
+
+
+/* 設定欄大小 */
+/* .item
+{
+    width: cals(100%/3 -30px);
+} */
+
+
