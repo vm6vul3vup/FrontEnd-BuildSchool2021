@@ -1,0 +1,34 @@
+/* *
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+} */
+
+/* 所有p後面的span變紅色 */
+
+nav
+{
+    background-color: cadetblue;
+}
+
+nav a
+{
+    margin: 5px;
+}
+
+nav > ul
+{
+    display: flex;
+    /* flex-flow: column wrap; */
+    /* margin: auto; */
+}
+nav > ul ul
+{
+    display: none;
+    position: absolute;
+}
+
+nav li:hover > ul{
+	display: block;
+}

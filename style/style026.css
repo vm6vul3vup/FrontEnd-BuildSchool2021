@@ -1,0 +1,18 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 所有p後面的span變紅色 */
+h1 ~ p span
+{
+    color: red;
+}
+
+/* h1後面第一個p便藍色 */
+h1 + p
+{
+    color: blue;
+}
