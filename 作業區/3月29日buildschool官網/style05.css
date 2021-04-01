@@ -74,6 +74,31 @@
     font-size: 70px;
 }
 
+.fa-lightbulb
+{
+    font-size: 70px;
+}
+
+.fa-id-badge
+{
+    font-size: 70px;
+}
+
+.fa-people-carry
+{
+    font-size: 70px;
+}
+
+.m-120
+{
+    margin-bottom: -120px;
+}
+
+.m-60
+{
+    margin-bottom: -50px;
+}
+
 .city-bg
 {
     display: flex;
@@ -99,3 +124,5 @@
 {
     height: 400px;
 }
+
+
