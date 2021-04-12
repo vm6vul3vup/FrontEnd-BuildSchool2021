@@ -86,15 +86,15 @@
             //方法一 //tbody
             Reservoir.forEach((item, index) => {
                 tr = document.createElement("tr");
-                col01 = document.createElement("th");
+                col01 = document.createElement("td");
                 col01.innerText = index+1;
-                col02 = document.createElement("th");
+                col02 = document.createElement("td");
                 col02.innerText = item["Name"];
-                col03 = document.createElement("th");
+                col03 = document.createElement("td");
                 col03.innerText = item["Capacity"];
-                col04 = document.createElement("th");
+                col04 = document.createElement("td");
                 col04.innerText = item["Percent"];
-                col05 = document.createElement("th");
+                col05 = document.createElement("td");
                 col05.innerText = item["Days"];
 
                 tr.appendChild(col01);
@@ -110,12 +110,12 @@
             let col;
             Reservoir.forEach((item, index) => {
                 tr = document.createElement("tr");
-                col = document.createElement("th");
+                col = document.createElement("td");
                 col.innerText = index+1;
                 tr.appendChild(col);
                 let keys2 = Object.keys(item);
                 keys2.forEach((item2, index2) => {
-                    col = document.createElement("th");
+                    col = document.createElement("td");
                     col.innerText = item[item2];
                     tr.appendChild(col);
                 });

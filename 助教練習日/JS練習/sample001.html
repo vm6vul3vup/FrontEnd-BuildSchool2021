@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <style>
+            .box{
+                display: flex;
+            }
+            .box div{
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="box">
+        <div id="div_1">
+
+        </div>
+        <div class="div_2">
+
+        </div>
+        <div class="div_1 div_2">
+
+        </div>
+    </div>
+
+    <h1 id="h1">Hello, world!</h1>
+    <h1 id="h1_2"></h1>
+    <input type="text" id="input">
+    <button id="button">btn</button>
+    <img src="" alt="" id="img">
+    <input type="text" id="pwd_input">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let array = ["Node3", "NodeList3", "HTMLCollection3"];
+        let h1 = document.querySelector("h1");
+        console.log(h1);
+        console.dir(h1);
+        // console.warn("123");
+        // console.error("456");
+        console.table(array);
+        // debugger;
+        let st = [
+            { Name: "Tom", Age: 30 },
+            { Name: "Amy", Age: 25 },
+            { Name: "Jenny", Age: 26 },
+            { Name: "Fred", Age: 27 },
+            { Name: "Anny", Age: 40 }
+        ];
+
+        //for in 是index
+        for (let item in st) {
+            console.log(st[item]);
+        }
+        //for of 是值
+        for (let item of st) {
+            console.log(item);
+        }
+
+        //foreach
+        st.forEach((item,index)=>{
+            console.log(`${item.Name},${item.Age}`);
+        })
+
+        let obj = 
+        {
+            Name: "Tom",
+            Age: 30,
+            IsSingle: false,
+            Sex: 'male',
+            Weight: 100,
+            Height: 150
+        };
+
+        for (const key in obj) {
+            console.log(`${key}: ${obj[key]}`);
+        }
+
+
+
+        //BY ID
+        let div_1 = document.getElementById("div_1");
+        console.log(div_1);
+
+        //BY Class NAME  //回傳集合
+        let div_2 = document.getElementsByClassName("div_2")[0];
+        console.log(div_2);
+
+        //BY Tag NAME 回傳集合
+        let div = document.getElementsByTagName("div");
+        console.log(div);
+
+        //BY CSS選擇器 回傳單一
+        let css = document.querySelector(".box");
+        console.log(css);
+
+        //BY CSS選擇器 回傳單一
+        let div_22 = document.querySelector(".div_2");
+        console.log(div_22);
+
+        //BY CSS選擇器 回傳全部找到的
+        let div_222 = document.querySelectorAll(".div_2");
+        console.log(div_222);
+
+        h1 = document.getElementById("h1");
+        h1.innerText = "Hello World <input type = 'text'/>";
+
+        let h2 = document.getElementById("h1_2");
+        h2.innerHTML = "Hello World <input type = 'text'/>";
+        
+        let input = document.getElementById("input");
+        input.value = "12345678";
+
+        h1.style.color = "red";
+
+        let button = document.getElementById("button");
+        button.classList.add('btn','btn-primary');
+        // button.classList.remove('btn','btn-primary');
+
+        button.onclick = function()
+        {
+            setTimeout(()=>{
+                button.classList.replace('btn-primary','btn-success');
+            },300)
+            setTimeout(()=>{
+                button.classList.replace('btn-success','btn-primary');
+            },600)
+            setTimeout(()=>{
+                button.classList.replace('btn-primary','btn-success');
+            },900)
+            setTimeout(()=>{
+                button.classList.replace('btn-success','btn-primary');
+            },1200)
+            setTimeout(()=>{
+                button.classList.replace('btn-primary','btn-success');
+            },1500)
+            setTimeout(()=>{
+                button.classList.replace('btn-success','btn-primary');
+            },1800)
+        }
+
+        let img = document.getElementById("img");
+        img.setAttribute('src','https://picsum.photos/200/200/?random=1');
+        img.setAttribute('class','w-100');
+        
+        let pwd_input = document.getElementById('pwd_input');
+        pwd_input.setAttribute('type','password');
+
+        button.setAttribute('custom',`{"Name":"測試" , "Price":100}`);
+        button.onclick = function(){
+            let product = JSON.parse(button.getAttributeNode('custom').value);
+            h1.innerText = `名稱: ${product.Name} 價格: ${product.Price}`;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+
+
+<script>
+    let h1 = document.createElement("h1");
+    h1.innerText = "DOM";
+    document.body.appendChild(h1);
+    let div = document.createElement("div");
+    let p;
+    p = document.createElement("p");
+    p.innerText = "window";
+    div.appendChild(p);
+
+    p = document.createElement("p");
+    p.innerText = "document";
+    div.appendChild(p);
+
+    p = document.createElement("p");
+    p.innerText = "html";
+    div.appendChild(p);
+
+    document.body.appendChild(div);
+
+    let ul = document.createElement("ul");
+    let li;
+    li = document.createElement("li");
+    li.innerText = "Node";
+    ul.appendChild(li);
+
+    li = document.createElement("li");
+    li.innerText = "NodeList";
+    ul.appendChild(li);
+
+    li = document.createElement("li");
+    li.innerText = "HTMLCollection";
+    ul.appendChild(li);
+
+    document.body.appendChild(ul);
+
+    let ol = document.createElement("ol");
+    let stringArray = ["Node1","NodeList1","HTMLCollection1"];
+    stringArray.forEach(value => {
+        li = document.createElement("li");
+        li.innerText = value;
+        ol.appendChild(li);
+    });
+
+    document.body.appendChild(ol);
+
+    let stringArray2 = ["Node2","NodeList2","HTMLCollection2"];
+    function genUI(liArray){
+        let ul = document.createElement("ul");
+
+        liArray.forEach(value => {
+            let li = document.createElement("li");
+            li.innerText = value;
+            ul.appendChild(li);
+        });
+
+        return ul;
+    }
+    ul = document.createElement("ul");
+    ul = genUI(stringArray2);
+    document.body.appendChild(ul);
+
+    let stringArray3 = ["Node3","NodeList3","HTMLCollection3"];
+    let ul2 = genUI(stringArray3);
+    document.body.appendChild(ul2);
+    
+
+</script>
+</html>
