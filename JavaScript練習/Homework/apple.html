@@ -19,6 +19,10 @@
         .mr-30px {
             margin-right: 30px;
         }
+
+        .h-560px {
+            height: 560px;
+        }
     </style>
 
     <title>Apple</title>
@@ -50,22 +54,83 @@
         crossorigin="anonymous"></script>
 
     <script>
-        let item_iPhone_color = ["iphone-black.png","iphone-red.png","iphone-yellow.png"];
-        let item_iPad_color = ["ipad-gold.png","ipad-silver.png","ipad-space.png"];
-        let item_Mac_color = ["mbp13touch-silver.png","mbp13touch-space.png"];
+        let item_iPhone_picture = ["iphone11-select-2019-family.png","iphone-black.png","iphone-red.png","iphone-yellow.png"];
+        let item_iPad_picture = ["ipad-hero-unselected-201909_GEO_TW.png","ipad-gold.png","ipad-silver.png","ipad-space.png"];
+        let item_Mac_picture = ["mbp13touch-space-gallery1-201907.png","mbp13touch-silver.png","mbp13touch-space.png"];
+        let item_iPhone_color = ["預設","黑色","紅色","黃色"];
+        let item_iPad_color = ["預設","金色","銀色","灰色"];
+        let item_Mac_color = ["預設","銀色","灰色"];
+        let item_iPhone_format = ["預設","64GB","128GB","256GB"];
+        let item_iPad_format = ["預設","金色","銀色","灰色"];
+        let item_Mac_format = ["預設","銀色","灰色"];
+        let item_iPhone_price = ["預設","NT$23,900","NT$25,500","NT$29,000"];
+        let item_iPad_price = ["預設","金色","銀色","灰色"];
+        let item_Mac_price = ["預設","銀色","灰色"];
 
         document.getElementById("iPhone").addEventListener("click", function () {
-            
+            let group = document.getElementById("group");
+            group.setAttribute('class','d-flex flex-row justify-content-center align-items-center w-100');
+
             let div_pic = document.getElementById("picture");
+            div_pic.setAttribute('class','d-flex flex-row justify-content-center align-items-center w-50 h-560px');
             div_pic.innerText = "";
             let img = document.createElement("img");
-            img.src = "./img/" + item_iPhone_color[2];
+            img.src = "./img/" + item_iPhone_picture[0];
             div_pic.appendChild(img);
+
+            let div_item = document.getElementById("item");
+            div_item.setAttribute('class','w-50');
+            div_item.innerText = "";
+            
+            let p_color = document.createElement('p');
+            p_color.innerText = "顏色";
+            div_item.appendChild(p_color);
+            // let br = document.createElement('br');
+            // div_item.appendChild(br);
+
+            //產生button物件跟事件
+            for(let i=1;i < item_iPhone_picture.length ;i++)
+            {
+                let button = document.createElement('button');
+                button.setAttribute('class','btn btn-dark');
+                button.innerText = item_iPhone_color[i];
+                button.onclick = function(){
+                    img.src = "./img/" + item_iPhone_picture[i];
+                }
+                div_item.appendChild(button);
+            }
+
+            let p_format = document.createElement('p');
+            p_format.innerText = "規格";
+            div_item.appendChild(p_format);
+            let p_price_count = document.createElement('p');
+            p_price_count.innerText = "價格試算";
+            // div_item.appendChild(p_price_count);
+            let p_price = document.createElement('p');
+            p_price.innerText = "NT$";
+            div_item.appendChild(p_price);
+
+            for(let i=1;i < item_iPhone_format.length ;i++)
+            {
+                let button = document.createElement('button');
+                button.setAttribute('class','btn btn-dark');
+                button.innerText = item_iPhone_format[i];
+                button.onclick = function(){
+                    p_price.innerText = item_iPhone_price[i];
+                }
+                div_item.appendChild(button);
+            }
+            div_item.appendChild(p_price_count);
+            div_item.appendChild(p_price);
             
         });
 
 
-        function product(pic, item) {
+        function product(color,item) {
+
+        }
+
+        function changePicture(){
 
         }
     </script>
