@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <h1>Hello, world!</h1>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script>
+        var list = [
+        { Item: '啤酒', Type: '喝的'},
+        { Item: '汽水', Type: '喝的'},
+        { Item: '火鍋', Type: '吃的'},
+        { Item: '燒烤', Type: '吃的'},
+        { Item: '冰淇淋', Type: '吃的'}
+        ]
+
+        //找到第一個吃東西
+        let r1 = list.find(x => x.Type == '吃的');
+        console.log(r1.Item);
+
+        //找所有吃的東西
+        let r2 = list.filter(x => x.Type == '吃的');
+        console.log(r2);
+
+        //找到冰淇淋在第幾個位置
+        let ice = list.find(x => x.Item == '冰淇淋');
+        let r3 = list.indexOf(ice);
+        console.log(`冰淇淋在第 ${r3+1} 個位置`);
+
+        //用list生成新的集合
+        //["啤酒","汽水","火鍋","燒烤","冰淇淋"]
+        let r4 = list.map(x => x.Item);
+        console.log(r4);
+
+        //用list生成新的集合
+        // { Id:5 ,Name: '啤酒'},
+        let r5 = list.map(x => {
+            return{
+                Id: list.length -  list.indexOf(x),
+                Name: x.Item
+            }
+        });
+        console.table(r5);
+
+        //排序
+        var nums_1 = [9 , 6 , 7 , 2 , 5 , 8, 90, 25];
+        let r6 = nums_1.sort();
+        console.log(r6);
+
+        //排序2
+        //sort會影響到原集合的排序
+        var nums_2 = [10000 , 10 , 100 , 1 , 101];
+        let r7 = nums_2.sort((a,b) => a - b);
+        console.log(r7);
+
+        //排序3 拿 r5 用id排序
+        let r8 = r5.sort((a,b) => a.Id - b.Id);
+        console.table(r8);
+
+        //12生肖排序
+        //['豬','龍','鼠','狗','羊', '雞','馬']
+        var animal = ['豬','龍','鼠','狗','羊', '雞','馬'];
+        let r9 = animal.sort((a,b) =>
+            {
+                let Sorting_Rules = ['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
+                // console.log(a);
+                // console.log(b);
+                // console.log("-----");
+                return Sorting_Rules.indexOf(a) - Sorting_Rules.indexOf(b);
+            }
+        );
+
+        console.log(r9);
+
+        //擴充groupBy方法
+        Array.prototype.groupBy = function(prop)
+        {
+            return this.reduce(function(groups,item){
+                const val = item[prop];
+                groups[val] = groups[val] || [];
+                groups[val].push(item);
+                return groups;
+            },{})
+        };
+        //group by Type
+        let r10 = list.groupBy('Type');
+        console.log(r10);
+
+
+    </script>
+</body>
+
+</html>

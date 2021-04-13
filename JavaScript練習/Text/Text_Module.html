@@ -10,10 +10,11 @@
     <h1></h1>
     <p></p>
     <div></div>
+    <h2></h2>
 
 
     <script type="module">
-        import { $g , genUI} from '../modules/helpers.js';
+        import { $g , genUI , getRandom} from '../modules/helpers.js';
 
         let h1 = $g('h1');
         h1.innerText = "JavaScript Module";
@@ -21,6 +22,11 @@
         let stringArray3 = ["Node3","NodeList3","HTMLCollection3"];
         let ul2 = genUI(stringArray3);
         document.body.appendChild(ul2);
+
+        let h2 = $g('h2');
+        h2.innerText = getRandom(1,100);
+        
+
     </script>
 </body>
 </html>
