@@ -1,0 +1,14 @@
+{
+    "firstname": "Tom",
+    "height": 168,
+    "email": "vm6vul3vup@gmail.com",
+    "city": {
+    "通訊地址": "新竹縣",
+    "⼾籍地址": "新竹縣"
+    },
+    "phone": {
+    "市話": "03-5555555",
+    "行動電話": "09XX-XXXXXX"
+    },
+    "cars": [ "BMW", "Nissan GT-R", "Audi"]
+}

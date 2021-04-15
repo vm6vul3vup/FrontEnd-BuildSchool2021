@@ -1,0 +1,47 @@
+[
+    {
+        "firstname": "Tom",
+        "height": 168,
+        "email": "vm6vul3vup@gmail.com",
+        "city": {
+        "通訊地址": "新竹縣",
+        "⼾籍地址": "新竹縣"
+        },
+        "phone": {
+        "市話": "03-5555555",
+        "行動電話": "09XX-XXXXXX"
+        },
+        "cars": [ "BMW", "Nissan GT-R", "Audi"]
+    },
+
+    {
+        "firstname": "Ken",
+        "height": 180,
+        "email": "XXXXXXXXXX@gmail.com",
+        "city": {
+        "通訊地址": "新竹市",
+        "⼾籍地址": "新竹市"
+        },
+        "phone": {
+        "市話": "03-6666666",
+        "行動電話": "09XX-XXXXXX"
+        },
+        "cars": [ "BMW2", "Nissan GT-R", "Audi"]
+    },
+
+    {
+        "firstname": "Amy",
+        "height": 150,
+        "email": "TTTTTTTTTT@gmail.com",
+        "city": {
+        "通訊地址": "桃園縣",
+        "⼾籍地址": "桃園縣"
+        },
+        "phone": {
+        "市話": "03-7777777",
+        "行動電話": "09XX-XXXXXX"
+        },
+        "cars": [ "BMW3", "Nissan GT-R", "Audi"]
+    }
+
+]
