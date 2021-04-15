@@ -54,18 +54,28 @@
         crossorigin="anonymous"></script>
 
     <script>
-        let item_iPhone_picture = ["iphone11-select-2019-family.png", "iphone-black.png", "iphone-red.png", "iphone-yellow.png"];
-        let item_iPad_picture = ["ipad-hero-unselected-201909_GEO_TW.png", "ipad-gold.png", "ipad-silver.png", "ipad-space.png"];
-        let item_Mac_picture = ["mbp13touch-space-gallery1-201907.png", "mbp13touch-silver.png", "mbp13touch-space.png"];
-        let item_iPhone_color = ["預設", "黑色", "紅色", "黃色"];
-        let item_iPad_color = ["預設", "粉紅色", "銀色", "灰色"];
-        let item_Mac_color = ["預設", "銀色", "灰色"];
-        let item_iPhone_format = ["預設", "64GB", "128GB", "256GB"];
-        let item_iPad_format = ["預設", "32GB", "128GB"];
-        let item_Mac_format = ["預設", "2.3GHz 雙核心處理器，Turbo Boost 最高可達 3.6GHz 256GB 儲存空間", "3.6GHz 4 核心處理器256GB 儲存空間Retina 4K 顯示器"];
-        let item_iPhone_price = ["預設", "NT$23,900", "NT$25,500", "NT$29,000"];
-        let item_iPad_price = ["預設", "NT$10,500", "NT$13,500"];
-        let item_Mac_price = ["預設", "NT$35,900", "NT$41,900"];
+        let item_Product = {
+            iPhone: {
+                picture : ["iphone11-select-2019-family.png", "iphone-black.png", "iphone-red.png", "iphone-yellow.png"],
+                color : ["預設", "黑色", "紅色", "黃色"],
+                format : ["預設", "64GB", "128GB", "256GB"],
+                price : ["預設", "NT$23,900", "NT$25,500", "NT$29,000"]
+            },
+
+            iPad: {
+                picture : ["ipad-hero-unselected-201909_GEO_TW.png", "ipad-gold.png", "ipad-silver.png", "ipad-space.png"],
+                color : ["預設", "粉紅色", "銀色", "灰色"],
+                format : ["預設", "32GB", "128GB"],
+                price : ["預設", "NT$10,500", "NT$13,500"]
+            },
+
+            Mac: {
+                picture : ["mbp13touch-space-gallery1-201907.png", "mbp13touch-silver.png", "mbp13touch-space.png"],
+                color : ["預設", "銀色", "灰色"],
+                format : ["預設", "2.3GHz 雙核心處理器，Turbo Boost 最高可達 3.6GHz 256GB 儲存空間", "3.6GHz 4 核心處理器256GB 儲存空間Retina 4K 顯示器"],
+                price : ["預設", "NT$35,900", "NT$41,900"]
+            }
+        }
 
 
         //方法一
@@ -123,9 +133,9 @@
 
         // });
 
-        product("iPhone",item_iPhone_picture,item_iPhone_color,item_iPhone_format,item_iPhone_price);
-        product("iPad",item_iPad_picture,item_iPad_color,item_iPad_format,item_iPad_price);
-        product("Mac",item_Mac_picture,item_Mac_color,item_Mac_format,item_Mac_price);
+        product("iPhone",item_Product.iPhone.picture,item_Product.iPhone.color,item_Product.iPhone.format,item_Product.iPhone.price);
+        product("iPad",item_Product.iPad.picture,item_Product.iPad.color,item_Product.iPad.format,item_Product.iPad.price);
+        product("Mac",item_Product.Mac.picture,item_Product.Mac.color,item_Product.Mac.format,item_Product.Mac.price);
 
         function product(item, picture, color, format, price) {
             document.getElementById(item).addEventListener("click", function () {
