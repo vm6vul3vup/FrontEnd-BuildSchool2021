@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>用XMLHttpRequest請求GitHub JSON資料</h1>
+
+    <button id='button1'>Request JSON1</button>
+    <button id='button2'>Request JSON2</button>
+    <button id='button3'>Request JSON3</button>
+    <button id='button4'>Request JSON4</button>
+    <button id='btnClear'>Clear</button>
+    <div id='msg'></div>
+
+    <script type="module">
+        import { $g } from "../Modules/helpers.js"
+
+        let msg = $g('#msg');
+
+        $g('button').forEach((item) => {
+            item.addEventListener('click', () => { msg.innerText = ''; })
+        });
+
+        let btn1 = $g('#button1').addEventListener('click', requestJSON1);
+        let btn2 = $g('#button2').addEventListener('click', requestJSON2);
+        let btn3 = $g('#button3').addEventListener('click', requestJSON3);
+        let btn4 = $g('#button4').addEventListener('click', requestJSON4);
+        $g('#btnClear').addEventListener('click', () => { msg.innerText = ''; })
+
+
+        // const url = 'https://raw.githubusercontent.com/apprunner/FileStorage/master/iPad_DataFixed.json';
+        // // const url = 'http://127.0.0.1:5503/XMLHttpRequest/iPad_DataFixed.json';
+        // const url = 'https://raw.githubusercontent.com/vm6vul3vup/FrontEnd-BuildSchool2021/main/JavaScript%E7%B7%B4%E7%BF%92/JSON/iPadAir2020_Data.json';
+        const url = 'https://raw.githubusercontent.com/vm6vul3vup/FrontEnd-BuildSchool2021/main/JavaScript%E7%B7%B4%E7%BF%92/JSON/json_array.json';
+
+        let xhr = new XMLHttpRequest();
+        let file;
+        //Ex1
+
+        function requestJSON1() {
+            xhr.onload = function () {
+                // msg.innerText = this.responseText;
+                //this為XMLHttpRequest物件
+                console.log(JSON.parse(this.responseText));
+                console.log(this.responseText);
+                let ul = document.createElement('ul');
+                file = JSON.parse(this.responseText);
+                file.forEach((emp, index) => {
+                    let li = document.createElement('li');
+                    li.innerText = `${emp.firstname},${emp.height},${emp.email},${emp.phone.行動電話},${emp.cars[0]},${emp.cars[1]},${emp.cars[2]}`;
+                    ul.appendChild(li);
+                });
+                msg.appendChild(ul);
+            }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        //Ex2
+        function requestJSON2() {
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    msg.textContent = this.responseText;
+                } else {
+                    msg.textContent = '發⽣錯誤，HTTP response代碼：' +
+                        xhr.status;
+                }
+                // if (xhr.readyState == 4 && xhr.statusText == "OK") {
+                //     msg.textContent = this.responseText;
+                // } else {
+                //     msg.textContent = '發⽣錯誤，HTTP response代碼：' +
+                //         xhr.status;
+                // }
+            }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+
+        //Ex3
+        function requestJSON3() {
+            xhr.addEventListener('load', responseHandler);
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        //Ex4
+        function requestJSON4() {
+            xhr.onreadystatechange = () => { msg.innerText = this.responseText; }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        function responseHandler() {
+            msg.innerText = this.responseText;
+            //this為XMLHttpRequest物件
+            console.log(this);
+        }
+
+        let clear = document.getElementById('btnClear');
+        // clear.addEventListener('click', this.innerText="123");
+
+    </script>
+</body>
+
+</html>

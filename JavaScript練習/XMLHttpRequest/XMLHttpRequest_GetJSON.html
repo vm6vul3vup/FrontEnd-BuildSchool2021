@@ -52,19 +52,34 @@
 
         //Ex2
         function requestJSON2() {
-
+            xhr.onload = responseHandler;
+            xhr.open('GET', url);
+            xhr.send();
         }
 
 
         //Ex3
         function requestJSON3() {
-
+            xhr.addEventListener('load',responseHandler);
+            xhr.open('GET', url);
+            xhr.send();
         }
 
         //Ex4
         function requestJSON4() {
-
+            xhr.onreadystatechange = () => { msg.innerText = this.responseText; }
+            xhr.open('GET', url);
+            xhr.send();
         }
+
+        function responseHandler() {
+            msg.innerText = this.responseText;
+            //this為XMLHttpRequest物件
+            console.log(this);
+        }
+
+        let clear = document.getElementById('btnClear');
+        clear.addEventListener('click', this.innerText="");
 
     </script>
 </body>
