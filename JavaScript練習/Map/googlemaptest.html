@@ -39,26 +39,23 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-oBz3N2rhyVZGeCouxR3rV7sHmBnW1g4&callback=initMap&libraries=&v=weekly"
         async></script>
-        <script>
-            //
-            //
-            //
+    <script>
 
-            function initMap() {
-                // const myLatLng = { lat: -25.363, lng: 131.044 };
-                const myLatLng = { lat: 24.75975535751334, lng: 120.95298949755029 };
-                const map = new google.maps.Map(document.getElementById("map"), {
-                    zoom: 15,
-                    center: myLatLng,
-                });
-                new google.maps.Marker({
-                    position: myLatLng,  //標記位置
-                    map,  //標記地圖
-                    title: "中華大學",  //移至圖標顯示的訊息
-                });
-            }
-        </script>
-    
+        function initMap() {
+            // const myLatLng = { lat: -25.363, lng: 131.044 };
+            const myLatLng = { lat: 24.75975535751334, lng: 120.95298949755029 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: myLatLng,
+            });
+            new google.maps.Marker({
+                position: myLatLng,  //標記位置
+                map,  //標記地圖
+                title: "中華大學",  //移至圖標顯示的訊息
+            });
+        }
+    </script>
+
 </body>
 
 </html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        
+    </script>
+
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-oBz3N2rhyVZGeCouxR3rV7sHmBnW1g4&callback=initMap&libraries=&v=weekly"
+        async></script>
+    <script>
+        // let taiwanjson = '../map/台灣行政地區.json';
+
+        const url = '../Homework/googlemap/台灣行政地區.json';
+        const url2 = '../Homework/googlemap/台灣自來水用量.json';
+        let xhr = new XMLHttpRequest();
+        let xhr2 = new XMLHttpRequest();
+        let cityfile;
+        let waterfile;
+        let waterArray;
+        function requestJSON1() {
+            xhr.onload = function () {
+                // msg.innerText = this.responseText;
+                //this為XMLHttpRequest物件
+                // console.log(JSON.parse(this.responseText));
+                // console.log(this.responseText);
+                cityfile = JSON.parse(this.responseText);
+            }
+            xhr.open('GET', url);
+            xhr.send();
+        }
+
+        function requestJSON2() {
+            xhr2.onload = function () {
+                // msg.innerText = this.responseText;
+                //this為XMLHttpRequest物件
+                // console.log(JSON.parse(this.responseText));
+                // console.log(this.responseText);
+                waterfile = JSON.parse(this.responseText);
+                // console.log(waterfile);
+                waterArray = waterfile.TaiwanWaterExchangingData.StatisticofWaterResourcesClass.StatisticofWaterUsageClass.TheConsumptionOfWater;
+                // console.log(waterArray);
+                // console.log(waterArray[0].County);
+            }
+            xhr2.open('GET', url2);
+            xhr2.send();
+        }
+        requestJSON1();
+        requestJSON2();
+
+        function initMap() {
+            const myLatLng = { lat: 24.75975535751334, lng: 120.95298949755029 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: myLatLng,
+            });
+            new google.maps.Marker({
+                position: myLatLng,  //標記位置
+                map,  //標記地圖
+                title: "中華大學",  //移至圖標顯示的訊息
+            });
+
+
+
+            const train = { lat: 24.802772791956517, lng: 120.97150547790086 };
+            new google.maps.Marker({
+                position: train,  //標記位置
+                map,  //標記地圖
+                title: "新竹火車站",  //移至圖標顯示的訊息
+            });
+
+            cityfile.forEach((city, index) => {
+                const point = { lat: city.Lat, lng: city.Lng };
+                new google.maps.Marker({
+                    position: point,  //標記位置
+                    map,  //標記地圖
+                    title: city.District  //移至圖標顯示的訊息
+                });
+            });
+
+            // console.log(cityefile);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

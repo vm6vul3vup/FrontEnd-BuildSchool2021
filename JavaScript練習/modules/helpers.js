@@ -1,7 +1,7 @@
-function $g (selector) {
+function $g(selector) {
 
     //判斷是否為id selector
-    if (selector.includes('#') && !selector.includes('')){
+    if (selector.includes('#') && !selector.includes('')) {
         //回傳Element
         return document.querySelector(selector);
     }
@@ -12,7 +12,7 @@ function $g (selector) {
     return nodelist.length == 1 ? nodelist[0] : nodelist;
 }
 
-function genUI(liArray){
+function genUI(liArray) {
     let ul = document.createElement("ul");
 
     liArray.forEach(value => {
@@ -28,4 +28,16 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * max + min);
 }
 
-export { $g , genUI , getRandom };
+function $c(element, text) {
+    let el = document.createElement(element);
+
+    if (text !== null && text !== undefined && text.length > 0) {
+        el.innerText = text;
+    }
+
+
+    return el;
+}
+
+
+export { $g, genUI, getRandom , $c};
