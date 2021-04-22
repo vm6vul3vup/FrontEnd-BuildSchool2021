@@ -1,0 +1,32 @@
+td
+{
+    width: 14.285714%;
+    /* display: flex; */
+    /* justify-content: center; */
+    text-align: center;
+    /* align-items: center; */
+}
+
+
+th
+{
+    width: 14.285714%;
+    /* display: flex; */
+    /* justify-content: center; */
+    text-align: center;
+    /* align-items: center; */
+}
+
+h2
+{
+    text-align: center;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}

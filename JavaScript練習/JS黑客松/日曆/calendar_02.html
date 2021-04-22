@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./calendar.css">
+    <title>日曆</title>
+</head>
+
+<body>
+    <h1 class="d-flex justify-content-center">日曆</h1>
+    <div class="d-flex justify-content-center">
+        <button id="prev" type="button" class="btn btn-dark mr-30px">上個月</button>
+        <button id="next" type="button" class="btn btn-dark mr-30px">下個月</button>
+    </div>
+    <div id="calendar">
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <script type="module">
+        import { $g, $c } from '../../modules/helpers.js';
+
+        let d = new Date();
+
+        let h2 = $c('h2');
+        h2.innerText = get_yyyy_mm(d);
+        let calendar = $g('#calendar');
+        calendar.append(h2);
+
+        create_table();
+
+        //點上一個月觸發換月
+        document.getElementById('prev').addEventListener("click", function () {
+            d.setDate(15);
+            d.setMonth(d.getMonth() - 1);
+            console.log(d);
+            let calendar = $g('#calendar');
+            calendar.innerText = "";
+            let h2 = $c('h2');
+            h2.innerText = get_yyyy_mm(d);
+            calendar.append(h2);
+            create_table();
+        });
+
+        //點下一個月觸發換月
+        document.getElementById('next').addEventListener("click", function () {
+            d.setDate(15);
+            d.setMonth(d.getMonth() + 1);
+            console.log(d);
+            let calendar = $g('#calendar');
+            calendar.innerText = "";
+            let h2 = $c('h2');
+            h2.innerText = get_yyyy_mm(d);
+            calendar.append(h2);
+            create_table();
+        });
+
+        function get_yyyy_mm(d) {
+            let yyyy = d.getFullYear();
+            let mm = d.getMonth() + 1;
+            return `${yyyy}年${mm}月`;
+        }
+
+        function create_table() {
+            let calendar = $g('#calendar');
+            let table = $c('table');
+            table.setAttribute('class', 'table table-bordered');
+            create_thead(table);
+            create_tbody(table);
+
+            calendar.append(table);
+        }
+
+        function create_thead(table) {
+            let thead = $c('thead');
+            create_tr_th(thead);
+            table.append(thead);
+        }
+
+        function create_tbody(table) {
+            let tbody = $c('tbody');
+            create_tr_td(tbody);
+            table.append(tbody);
+        }
+
+        function create_tr_th(thead) {
+            let tr = $c('tr');
+            for (let j = 1; j <= 7; j++) {
+                let th = document.createElement('th');
+                if (j == 1) {
+                    th.innerText = "一";
+                }
+                else if (j == 2) {
+                    th.innerText = "二";
+                }
+                else if (j == 3) {
+                    th.innerText = "三";
+                }
+                else if (j == 4) {
+                    th.innerText = "四";
+                }
+                else if (j == 5) {
+                    th.innerText = "五";
+                }
+                else if (j == 6) {
+                    th.innerText = "六";
+                }
+                else {
+                    th.innerText = "日";
+                }
+                tr.append(th);
+            }
+            thead.append(tr);
+        }
+
+        //設定tbody內容
+        function create_tr_td(tbody) {
+            for (let i = 0; i < 6; i++) {
+                let dayArray = setday(d);
+                let tr = document.createElement('tr');
+
+                for (let j = 0; j < 7; j++) {
+                    let td = document.createElement('td');
+                    td.innerText = dayArray[i * 7 + j][1];
+                    if (checkToday(dayArray[i * 7 + j][0], dayArray[i * 7 + j][1]) == true) {
+                        td.setAttribute("class", "text-white bg-info");
+                        tr.append(td);
+                    }
+                    else {
+                        tr.append(td);
+                    }
+
+                }
+
+                tbody.append(tr);
+
+            }
+        }
+
+
+        //上個月最後一天的[月,日,星期]
+        function LastDayPrevMonth(d) {
+            let yyyy = d.getFullYear();
+            let mm = d.getMonth();
+            let FirstDay = new Date(yyyy, mm, 1);
+            let LastDayMonth = new Date(yyyy, mm, 0);
+            return [LastDayMonth.getFullYear(), LastDayMonth.getMonth() + 1, LastDayMonth.getDate(), LastDayMonth.getDay()];
+        }
+
+        //下個月最後一天的[月,日,星期]
+        function FirstDayNextMonth(d) {
+            let yyyy = d.getFullYear();
+            let mm = d.getMonth() + 1;
+            let FirstDay = new Date(yyyy, mm, 1);
+            return [FirstDay.getFullYear(), FirstDay.getMonth() + 1, FirstDay.getDate(), FirstDay.getDay()];
+        }
+
+        //這個月最後一天的[月,日,星期]
+        function LastDayThisMonth(d) {
+            let yyyy = d.getFullYear();
+            let mm = d.getMonth() + 1;
+            let FirstDay = new Date(yyyy, mm, 1);
+            let LastDayMonth = new Date(yyyy, mm, 0);
+            return [LastDayMonth.getFullYear(), LastDayMonth.getMonth() + 1, LastDayMonth.getDate(), LastDayMonth.getDay()];
+        }
+
+        //這個月第一天的[月,日,星期]
+        function FirstDayThisMonth(d) {
+            let yyyy = d.getFullYear();
+            let mm = d.getMonth();
+            let FirstDay = new Date(yyyy, mm, 1);
+            return [FirstDay.getFullYear(), FirstDay.getMonth() + 1, FirstDay.getDate(), FirstDay.getDay()];
+        }
+
+        console.log(LastDayPrevMonth(d));
+        console.log(FirstDayNextMonth(d));
+        console.log(LastDayThisMonth(d));
+        console.log(FirstDayThisMonth(d));
+
+
+        //設定日曆上面的日期
+        function setday(d) {
+            let dayArr = new Array();
+            let thisMonthFirstDay = FirstDayThisMonth(d);
+            let thisMonthLastDay = LastDayThisMonth(d);
+            let lastMonthLastDay = LastDayPrevMonth(d);
+            let nextMonthFirstDay = FirstDayNextMonth(d);
+
+            if (thisMonthFirstDay[3] == 1)  //這個月第一天為星期一時
+            {
+                let count = 0;
+                for (let i = 1; i <= thisMonthLastDay[2]; i++) {
+                    dayArr.push([thisMonthLastDay[1], i]);
+                    count++;
+                }
+
+                let count2 = count;
+                for (let j = 1; j <= (42 - count2); j++) {
+                    dayArr.push([nextMonthFirstDay[1], j]);
+                    count++;
+                }
+            }
+            else  //這個月第一天不為星期一時
+            {
+                let count = 0;
+                for (let i = 1; i <= lastMonthLastDay[3]; i++) {
+                    dayArr.push([lastMonthLastDay[1], lastMonthLastDay[2] - lastMonthLastDay[3] + i]);
+                    count++;
+                    console.log(count);
+                }
+                for (let j = 1; j <= thisMonthLastDay[2]; j++) {
+                    dayArr.push([thisMonthLastDay[1], j]);
+                    count++;
+                    console.log(count);
+                }
+
+                let count2 = count;
+                for (let k = 1; k <= (42 - count2); k++) {
+                    dayArr.push([nextMonthFirstDay[1], k]);
+                    count++;
+                    console.log(count);
+                }
+            }
+
+            return dayArr;
+        }
+        console.log(setday(d));
+
+        //判斷是否為今天
+        function checkToday(mm, dd) {
+            let d = new Date();
+            if ((d.getMonth() + 1) == mm && d.getDate() == dd) {
+                return true;
+            }
+
+            else return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
