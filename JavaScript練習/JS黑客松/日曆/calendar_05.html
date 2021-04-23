@@ -35,11 +35,12 @@
                 </div>
                 <div class="modal-body">
                     <h1 id="description" class="text-primary"></h1>
+                    <input id="input" type="text">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="save" type="button" class="btn btn-primary">Save</button>
+                    <button id="delete" type="button" class="btn btn-danger">Delete</button>
                 </div>
             </div>
         </div>
@@ -156,13 +157,7 @@
                     if (checkToday(dayArray[i * 7 + j][0], dayArray[i * 7 + j][1], dayArray[i * 7 + j][2]) == true) {
                         td.setAttribute("class", "button text-white bg-info");
                         //設定button Modal
-                        td.addEventListener('click', function () {
-                            this.setAttribute('data-toggle', 'modal');
-                            this.setAttribute('data-target', '#exampleModal');
-                            let modal = $g('#exampleModal');
-                            modal.querySelector('h5').innerText = `${dayArray[i * 7 + j][0]}年${dayArray[i * 7 + j][1]}月${dayArray[i * 7 + j][2]}日-記事本`;
-                            modal.querySelector('#description').innerText = `${dayArray[i * 7 + j][0]}, ${dayArray[i * 7 + j][1]}, ${dayArray[i * 7 + j][2]}`;
-                        });
+                        Notebook(dayArray[i * 7 + j][0], dayArray[i * 7 + j][1], dayArray[i * 7 + j][2], td);
                         tr.append(td);
                     }
 
@@ -173,14 +168,7 @@
                     else {
                         td.setAttribute("class", "button");
                         //設定button Modal
-                        td.addEventListener('click', function () {
-                            this.setAttribute('data-toggle', 'modal');
-                            this.setAttribute('data-target', '#exampleModal');
-                            let modal = $g('#exampleModal');
-                            modal.querySelector('h5').innerText = `${dayArray[i * 7 + j][0]}年${dayArray[i * 7 + j][1]}月${dayArray[i * 7 + j][2]}日-記事本`;
-                            modal.querySelector('#description').innerText = `${dayArray[i * 7 + j][0]}, ${dayArray[i * 7 + j][1]}, ${dayArray[i * 7 + j][2]}`;
-                        });
-
+                        Notebook(dayArray[i * 7 + j][0], dayArray[i * 7 + j][1], dayArray[i * 7 + j][2], td);
                         tr.append(td);
                     }
 
@@ -190,6 +178,27 @@
 
             }
         }
+
+        //設定新增button記事本內容
+        function Notebook(yyyy, mm, dd, td) {
+            //modal設定
+            td.addEventListener('click', function () {
+                this.setAttribute('data-toggle', 'modal');
+                this.setAttribute('data-target', '#exampleModal');
+                let modal = $g('#exampleModal');
+                modal.querySelector('h5').innerText = `${yyyy}年${mm}月${dd}日-記事本`;
+                modal.querySelector('#description').innerText = `${yyyy}, ${mm}, ${dd}`;
+            });
+        }
+
+        //判斷那天記事本是否有內容
+        function checkNotebook(yyyymmdd){
+            let storage = window.localStorage;
+            let note = localStorage.getItem(yyyymmdd);
+            console.log(note);
+            return note;
+        }
+        // console.log(checkNotebook(2021423));
 
 
         //上個月最後一天的[月,日,星期]
@@ -309,9 +318,14 @@
                 console.log(false);
                 return false;
             }
-
-
         }
+
+        //設定按Close後清空input內容
+        let close = $g('#close');
+        close.addEventListener('click', function () {
+            let input = $g('#input');
+            input.value = "";
+        });
 
     </script>
 
