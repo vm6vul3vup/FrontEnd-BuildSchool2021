@@ -368,8 +368,13 @@
             let textarea = $g('#textarea');
             let h1 = $g('#description');
             let day = h1.value;
-            localStorage.setItem(day, textarea.value);
+            if (textarea.value == "") {
+                //沒資料就不動作
+            }
             // console.log(day);
+            else {
+                localStorage.setItem(day, textarea.value);
+            }
             let note2 = localStorage.getItem(day);
             h1.innerText = note2;
             clickbutton(0);
