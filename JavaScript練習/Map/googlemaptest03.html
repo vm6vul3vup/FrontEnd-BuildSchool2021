@@ -64,7 +64,7 @@
 </head>
 
 <body>
-    <div class="d-flex"> <button id="btn">執行</button></div>
+    <!-- <div class="d-flex"> <button id="btn">執行</button></div> -->
     <div id="map"></div>
 
 
@@ -86,7 +86,7 @@
         function initMap() {
             const myLatLng = { lat: 24.75975535751334, lng: 120.95298949755029 };
             const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 12,
+                zoom: 8,
                 center: myLatLng,
             });
             new google.maps.Marker({
