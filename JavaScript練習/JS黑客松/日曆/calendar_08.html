@@ -159,7 +159,11 @@
                     let mm = dayArray[i * 7 + j][1];
                     let dd = dayArray[i * 7 + j][2];
                     td.innerText = dd;
-                    if (checkNotebook(`${yyyy}${mm}${dd}`) != null) {
+                    if (checkPreNext(yyyy, mm, dd, d) == true) {
+                        td.bgColor = "gray";
+                        tr.append(td);
+                    }
+                    else if (checkNotebook(`${yyyy}${mm}${dd}`) != null) {
                         td.setAttribute("class", "button text-white bg-danger");
                         //設定button Modal
                         Notebook(yyyy, mm, dd, td);
@@ -171,10 +175,7 @@
                         Notebook(yyyy, mm, dd, td);
                         tr.append(td);
                     }
-                    else if (checkPreNext(yyyy, mm, dd, d) == true) {
-                        td.bgColor = "gray";
-                        tr.append(td);
-                    }
+                    
                     else {
                         td.setAttribute("class", "button");
                         //設定button Modal
